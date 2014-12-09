@@ -22,9 +22,9 @@ public class AdsManagerAggregatorDriver {
 
             InputStream in = new FileInputStream(new File(propertiesFile));
 
-            /*String propertiesFile = "/emr.properties";
-            InputStream in = ads.manager.aggregator.AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
-            */
+            //String propertiesFile = "/emr.properties";
+            //InputStream in = ads.manager.aggregator.AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
+
 
             Properties properties = new Properties();
             try {
@@ -35,9 +35,9 @@ public class AdsManagerAggregatorDriver {
             }
 
             S3 s3 = new S3();
-            LOG.info("GetResource");
-            URL resource = AdsManagerAggregatorDriver.class.getResource("banner_apps_aggregations.pig");
-            LOG.info("EPA");
+
+            URL resource = AdsManagerAggregatorDriver.class.getResource("/banner_apps_aggregations.pig");
+
         try {
             //Upload pig script to ads.manager.common.S3
             s3.uploadFile(properties.getProperty("s3.bucket"),
