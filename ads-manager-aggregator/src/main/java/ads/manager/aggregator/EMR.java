@@ -1,3 +1,5 @@
+package ads.manager.aggregator;
+
 import ads.manager.common.AWS;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;
@@ -13,7 +15,7 @@ public class EMR {
     final static Logger LOG = LoggerFactory.getLogger(EMR.class);
 
     /**
-     * Creates a EMR cluster and runs the pig script to aggregate the ads.
+     * Creates a ads.manager.aggregator.EMR cluster and runs the pig script to aggregate the ads.
      */
     public void runPigAdsAggregator(Properties properties){
 
@@ -91,16 +93,16 @@ public class EMR {
 
         request.setVisibleToAllUsers(true);
 
-        LOG.info("Creating EMR cluster and run PIG script...");
+        LOG.info("Creating ads.manager.aggregator.EMR cluster and run PIG script...");
         RunJobFlowResult result = emr.runJobFlow(request);
 
         if(!waitForCompletion(emr, result).equals("COMPLETED")){
-            throw new RuntimeException("Error Running Pig Script or Creating EMR Cluster");
+            throw new RuntimeException("Error Running Pig Script or Creating ads.manager.aggregator.EMR Cluster");
         }
     }
 
     /**
-     * Waits for the EMR job to complete.
+     * Waits for the ads.manager.aggregator.EMR job to complete.
      * @param emr The emr cluster
      * @param result The result of the request to create the cluster.
      * @return The last state of the job.

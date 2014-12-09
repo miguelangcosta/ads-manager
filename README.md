@@ -2,12 +2,30 @@
 
 The **ADS Manager** simulates the process of a real time ads platform and some ways to process the data.
 
-## Requirements
- + **Java 1.8**: The ADS Manager requires [Java 1.8 (Java SE 8)](http://www.oracle.com/technetwork/java/javase/overview/index.html) or later.
+## Setup Steps
+ 1. Create the EC2 machine.
+    * This project was tested on a EC2 **Ubuntu Server** machine with an instance type **m3.large** with all the default options.
 
-## Tests
+ 2. Connect to the created machine
+    * ssh -i mykey.pem ubuntu@mypublicdns
 
-This project was tested on a EC2 **Amazon Linux AMI 2014.09.1 (HVM) - ami-6e7bd919** machine
-with an instance type **m3.large** with all the default options.
+ 3. Download the install.sh file on the AdsManager public github repo
+    under the bashscripts folder.
+    curl -L -O https://raw.githubusercontent.com/miguelangcosta/ads-manager/master/bashscripts/install.sh
+
+ 4. Copy the download file to the EC2 machine:
+  * scp install.sh -i mykey.pem ubuntu@mypublicdns:
+
+ 5. Run the previous copied file on the EC2 machine.
+    This will install all that is needed for this project to run.
+
+## Run the Producer
+    See ads-manager-kinesis-producer/README.md
+
+## Run the Consumer
+    See ads-manager-kinesis-consumrer/README.md
+
+## Run the Aggregator
+    See ads-manager-aggregator/README.md
 
 

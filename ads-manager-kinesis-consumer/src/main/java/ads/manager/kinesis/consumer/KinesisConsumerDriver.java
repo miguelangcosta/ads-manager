@@ -20,7 +20,7 @@ import com.amazonaws.services.kinesis.clientlibrary.lib.worker.Worker;
 /**
  *  Kinesis Consumer Application.
  */
-public final class KinesisConsumer {
+public final class KinesisConsumerDriver {
 
     //Default values if there is no properties file.
     private static final String DEFAULT_APP_NAME = "KinesisAdsManagerApplication";
@@ -40,12 +40,12 @@ public final class KinesisConsumer {
 
     private static KinesisClientLibConfiguration kinesisClientLibConfiguration;
 
-    private static final Log LOG = LogFactory.getLog(KinesisConsumer.class);
+    private static final Log LOG = LogFactory.getLog(KinesisConsumerDriver.class);
 
     /**
      * Constructor
      */
-    private KinesisConsumer() {
+    private KinesisConsumerDriver() {
         super();
     }
 
@@ -59,7 +59,7 @@ public final class KinesisConsumer {
         String propertiesFilePath = "/consumer.properties";
         if(args.length == 0){
             LOG.warn("Consumer properties not passed as argument, using default properties file");
-            in = KinesisConsumer.class.getResourceAsStream(propertiesFilePath);
+            in = KinesisConsumerDriver.class.getResourceAsStream(propertiesFilePath);
         }else{
             propertiesFilePath = args[0];
             in = new FileInputStream(new File(propertiesFilePath));

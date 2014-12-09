@@ -1,7 +1,17 @@
-# ADS Manager Kinesis Producer
+# ADS Manager Kinesis Consumer
 
-The **ADS Manager Kinesis Producer** creates fake ads data and ent the data to a Kinesis stream.
+The **ADS Manager Kinesis Consumer** creates a Kinesis client to read data from a Kinesis stream
+and send the data to S3.
 
-## Requirements
- + **Java 1.7**: The ADS Manager Kinesis Producer requires [Java 1.7 (Java SE 7)](http://www.oracle.com/technetwork/java/javase/overview/index.html) or later.
- 
+# REQUIREMENTS
+ + Run **ads-manager/bashscripts/install.sh**
+
+# STEPS
+ 1. Edit the file src/main/resources/run_kinesis_consumer.sh.
+   ..* Insert your **AWS_ACCESS_KEY_ID** and **AWS_SECRET_KEY**.
+   ..* (Optional) Change **CONSUMER_PATH** to the ads-manager-kinesis-consumer folder.
+
+ 2. Edit the file src/main/resources/consumer.properties to simulate a different number of events.
+
+ 3. Run file src/main/resources/run_kinesis_producer.sh
+        sh src/main/resources/run_kinesis_producer.sh

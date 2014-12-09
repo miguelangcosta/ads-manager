@@ -1,3 +1,5 @@
+package ads.manager.aggregator;
+
 import ads.manager.common.S3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +23,7 @@ public class AdsManagerAggregatorDriver {
             InputStream in = new FileInputStream(new File(propertiesFile));
 
             /*String propertiesFile = "/emr.properties";
-            InputStream in = AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
+            InputStream in = ads.manager.aggregator.AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
             */
 
             Properties properties = new Properties();
@@ -33,7 +35,7 @@ public class AdsManagerAggregatorDriver {
             }
 
             S3 s3 = new S3();
-            URL resource = AdsManagerAggregatorDriver.class.getResource("pig_scripts/banner_apps_aggregations.pig");
+            URL resource = AdsManagerAggregatorDriver.class.getResource("banner_apps_aggregations.pig");
 
         try {
             //Upload pig script to ads.manager.common.S3
@@ -44,7 +46,7 @@ public class AdsManagerAggregatorDriver {
            LOG.error(e.getMessage());
             System.exit(-1);
         }
-        //Create EMR cluster and run PIG script
+        //Create ads.manager.aggregator.EMR cluster and run PIG script
         EMR emr = new EMR();
         emr.runPigAdsAggregator(properties);
     }
