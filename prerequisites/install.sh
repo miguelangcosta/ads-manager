@@ -9,7 +9,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 
 #Install Git
-sudo apt-get install -y  git
+sudo apt-get install -y git
 apt-get update
 
 #Install maven
