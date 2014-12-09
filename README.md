@@ -11,13 +11,13 @@ The **ADS Manager** simulates the process of a real time ads platform and some w
 
  3. Download the install.sh file on the AdsManager public github repo
     under the prerequisites folder.
-    curl -L -O https://raw.githubusercontent.com/miguelangcosta/ads-manager/master/prerequisites/install.sh
+    * curl -L -O https://raw.githubusercontent.com/miguelangcosta/ads-manager/master/prerequisites/install.sh
 
  4. Copy the download file to the EC2 machine:
   * scp install.sh -i mykey.pem ubuntu@mypublicdns:
 
  5. Run the previous copied file on the EC2 machine.
-    This will install all that is needed for this project to run.
+  *  This will install all that is needed for this project to run.
 
  6. Fill the file ~/.aws/credentials with your correct aws keys.
 
