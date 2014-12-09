@@ -2,7 +2,7 @@
 
 The **ADS Manager Kinesis Producer** creates fake ads data and send the data to a Kinesis stream.
 
-## Requirements
+## REQUIREMENTS
  + Run **ads-manager/prerequisites/install.sh**
 
 ## STEPS
