@@ -63,7 +63,7 @@ public class EMR {
         args.add("--run-pig-script");
         args.add("--args");
         args.add("-f");
-        args.add("s3://" + properties.getProperty("s3.bucketName") + "/" + properties.getProperty("s3.pigScriptPath"));
+        args.add("s3://" + properties.getProperty("s3.bucket") + "/" + properties.getProperty("s3.pigScriptPath"));
         args.add("-p");
         args.add("INPUT_PATH=" + properties.getProperty("pig.scriptInputPath"));
         args.add("-p");
