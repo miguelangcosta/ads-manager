@@ -35,8 +35,9 @@ public class AdsManagerAggregatorDriver {
             }
 
             S3 s3 = new S3();
+            LOG.info("GetResource");
             URL resource = AdsManagerAggregatorDriver.class.getResource("banner_apps_aggregations.pig");
-
+            LOG.info("EPA");
         try {
             //Upload pig script to ads.manager.common.S3
             s3.uploadFile(properties.getProperty("s3.bucket"),

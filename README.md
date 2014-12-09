@@ -29,4 +29,9 @@ The **ADS Manager** simulates the process of a real time ads platform and some w
 ## Notes
    The Producer, Consumer and Aggregator can run on different machines.
 
+## Stop the applications
+   * On AWS console go to Kinesis and delete the stream created
+   * On AWS console go to DynamoDB and delete the table that have the application name of the ads-manager-kinesis-consummer
+
+
 
