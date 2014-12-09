@@ -13,4 +13,4 @@ and send the data to S3.
  2. Edit the file src/main/resources/consumer.properties to simulate a different number of events.
 
  3. Run file src/main/resources/run_kinesis_consumer.sh
-   *  sh src/main/resources/run_kinesis_consumer.sh
+   *    sh src/main/resources/run_kinesis_consumer.sh

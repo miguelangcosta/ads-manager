@@ -12,6 +12,6 @@ The **ADS Manager Kinesis Producer** creates fake ads data and send the data to 
  2. Edit the file src/main/resources/producer.properties to simulate a different number of events.
 
  3. Run file src/main/resources/run_kinesis_producer.sh
-        * sh src/main/resources/run_kinesis_producer.sh
+  * sh src/main/resources/run_kinesis_producer.sh
 
 
