@@ -18,9 +18,9 @@ public class AdsManagerAggregatorDriver {
 
     public static void main(String[] args) throws IOException {
 
-            String propertiesFile = "/emr.properties";
-            InputStream in = ads.manager.aggregator.AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
+            String propertiesFile = args[0];
 
+            InputStream in = new FileInputStream(new File(propertiesFile));
 
             Properties properties = new Properties();
             try {
@@ -32,17 +32,13 @@ public class AdsManagerAggregatorDriver {
 
             S3 s3 = new S3();
 
-            URL resource = AdsManagerAggregatorDriver.class.getResource("/banner_apps_aggregations.pig");
+            String pigScriptPath = new File(new File(propertiesFile).getParentFile() + "/banner_apps_aggregations.pig").getAbsolutePath();
 
-        try {
             //Upload pig script to ads.manager.common.S3
             s3.uploadFile(properties.getProperty("s3.bucket"),
                           properties.getProperty("s3.pigScriptPath"),
-                    new File(resource.toURI()).getAbsolutePath());
-        } catch (URISyntaxException e) {
-           LOG.error(e.getMessage());
-            System.exit(-1);
-        }
+                    pigScriptPath);
+
         //Create ads.manager.aggregator.EMR cluster and run PIG script
         EMR emr = new EMR();
         emr.runPigAdsAggregator(properties);
