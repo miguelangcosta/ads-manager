@@ -10,7 +10,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 #Install Git
 sudo apt-get install git
-apt-get update
+sudo apt-get update
 
 #Install maven
 sudo apt-get install maven
@@ -22,6 +22,7 @@ cd  ads-manager
 # Package the project
 mvn clean package
 
+# TODO: Only create if does not exist
 mkdir ~/.aws/
 cp prerequisites/credentials ~/.aws/
 
