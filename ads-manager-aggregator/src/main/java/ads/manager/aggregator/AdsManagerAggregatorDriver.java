@@ -18,12 +18,12 @@ public class AdsManagerAggregatorDriver {
 
     public static void main(String[] args) throws IOException {
 
-            String propertiesFile = args[0];
+            //String propertiesFile = args[0];
 
-            InputStream in = new FileInputStream(new File(propertiesFile));
+            //InputStream in = new FileInputStream(new File(propertiesFile));
 
-            //String propertiesFile = "/emr.properties";
-            //InputStream in = ads.manager.aggregator.AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
+            String propertiesFile = "/emr.properties";
+            InputStream in = ads.manager.aggregator.AdsManagerAggregatorDriver.class.getResourceAsStream(propertiesFile);
 
 
             Properties properties = new Properties();
