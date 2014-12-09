@@ -5,7 +5,7 @@ The **ADS Manager Kinesis Producer** creates fake ads data and send the data to 
 ## Requirements
  + Run **ads-manager/prerequisites/install.sh**
 
-# STEPS
+## STEPS
  1. Edit the file src/main/resources/run_kinesis_producer.sh.
    ..* (Optional) Change **PRODUCER_PATH** to the ads-manager-kinesis-producer folder.
 
