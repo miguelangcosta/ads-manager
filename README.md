@@ -3,8 +3,8 @@
 The **ADS Manager** simulates the process of a real time ads platform and some ways to process the data.
 
 ## Setup Steps
- 1. Create the EC2 machine.
-    * This project was tested on a EC2 **Ubuntu Server** machine with an instance type **m3.large** with all the default options.
+ 1. Create the EC2 machine(s).
+    * This project was tested on a EC2 **Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-f0b11187** machine with an instance type **m3.large** with all the default options.
 
  2. Connect to the created machine
     * ssh -i mykey.pem ubuntu@mypublicdns
@@ -29,5 +29,8 @@ The **ADS Manager** simulates the process of a real time ads platform and some w
 
 ## Run the Aggregator
     See ads-manager-aggregator/README.md
+
+## Notes
+   The Producer, Consumer and Aggregator can run on different machines.
 
 
