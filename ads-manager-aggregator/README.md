@@ -8,7 +8,7 @@ The **ADS Manager AGGREGATOR** aggregates all the data collected by the
 
 ## STEPS
  1. Edit the file src/main/resources/run_ads_manager_aggregator.sh.
-   ..* (Optional) Change **AGGREGATOR_PATH** to the ads-manager-aggregator folder.
+   * (Optional) Change **AGGREGATOR_PATH** to the ads-manager-aggregator folder.
 
  2. Edit the file src/main/resources/emr.properties to configure the correct properties.
 

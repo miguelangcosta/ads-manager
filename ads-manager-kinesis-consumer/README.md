@@ -8,7 +8,7 @@ and send the data to S3.
 
 ## STEPS
  1. Edit the file src/main/resources/run_kinesis_consumer.sh.
-   ..* (Optional) Change **CONSUMER_PATH** to the ads-manager-kinesis-consumer folder.
+   * (Optional) Change **CONSUMER_PATH** to the ads-manager-kinesis-consumer folder.
 
  2. Edit the file src/main/resources/consumer.properties to simulate a different number of events.
 
