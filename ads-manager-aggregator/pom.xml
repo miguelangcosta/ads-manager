@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>ads-manager</groupId>
         <artifactId>ads-manager-parent</artifactId>
+        <groupId>ads-manager</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ads-manager-common</artifactId>
+    <artifactId>ads-manager-aggregator</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -18,6 +18,12 @@
             <artifactId>aws-java-sdk</artifactId>
             <version>1.9.9</version>
         </dependency>
+        <dependency>
+            <groupId>ads-manager</groupId>
+            <artifactId>ads-manager-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>
