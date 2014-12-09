@@ -1,8 +1,7 @@
 #!/bin/sh
 
 #Reinstall Java 7 because Maven probels
-sudo apt-get remove openjdk-7-*
-sudo apt-get install openjdk-7-jdk
+sudo apt-get install openjdk-7-jdk openjdk-7-doc openjdk-7-jre-lib
 
 #Set JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
