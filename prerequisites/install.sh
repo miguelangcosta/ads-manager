@@ -22,5 +22,7 @@ cd  ads-manager
 # Package the project
 mvn clean package
 
+mkdir ~/.aws/
+cp prerequisites/credentials ~/.aws/
 
 

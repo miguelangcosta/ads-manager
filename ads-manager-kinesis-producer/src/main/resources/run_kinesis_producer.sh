@@ -1,6 +1,4 @@
 #!/bin/sh
-export AWS_ACCESS_KEY_ID=
-export AWS_SECRET_ACCESS_KEY=
 
 PRODUCER_PATH=~/ads-manager/ads-manager-kinesis-producer
 cd $PRODUCER_PATH

@@ -4,11 +4,10 @@ The **ADS Manager Kinesis Consumer** creates a Kinesis client to read data from 
 and send the data to S3.
 
 # REQUIREMENTS
- + Run **ads-manager/bashscripts/install.sh**
+ + Run **ads-manager/prerequisites/install.sh**
 
 # STEPS
  1. Edit the file src/main/resources/run_kinesis_consumer.sh.
-   ..* Insert your **AWS_ACCESS_KEY_ID** and **AWS_SECRET_KEY**.
    ..* (Optional) Change **CONSUMER_PATH** to the ads-manager-kinesis-consumer folder.
 
  2. Edit the file src/main/resources/consumer.properties to simulate a different number of events.
