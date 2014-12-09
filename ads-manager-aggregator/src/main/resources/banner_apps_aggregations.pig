@@ -22,13 +22,13 @@ GROUP_EVENTS = GROUP PARSE_TIMESTAMP_TO_DATE BY (
                 appId);
 
 CALCULATE_METRICS = FOREACH GROUP_EVENTS{
-                    distinctUsers = distinct PARSE_TIMESTAMP_TO_DATE::userId;
+                    distinctUsers = distinct PARSE_TIMESTAMP_TO_DATE.userId;
                     bannerViews = filter PARSE_TIMESTAMP_TO_DATE by eventType == 0;
-                    distinctBannerViewUsers = distinct bannerViews::userId;
+                    distinctBannerViewUsers = distinct bannerViews.userId;
                     bannerClicks = filter PARSE_TIMESTAMP_TO_DATE by eventType == 1;
-                    distinctBannerClickUsers = distinct bannerClicks::userId;
+                    distinctBannerClickUsers = distinct bannerClicks.userId;
                     bannerOpenApp = filter PARSE_TIMESTAMP_TO_DATE by eventType == 2;
-                    distinctBannerOpenAppUsers = distinct bannerOpenApp::userId;
+                    distinctBannerOpenAppUsers = distinct bannerOpenApp.userId;
                     generate flatten(group),
                              COUNT(distinctUsers),
                              COUNT(bannerViews),
