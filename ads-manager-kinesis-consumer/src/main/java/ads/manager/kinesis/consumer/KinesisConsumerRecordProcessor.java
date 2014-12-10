@@ -277,7 +277,7 @@ public class KinesisConsumerRecordProcessor implements IRecordProcessor {
             LOG.error(e.getMessage());
             System.exit(-1);
         }
-        S3 s3 = new S3();
+        S3 s3 = new S3(properties.getProperty("regionName"));
         Calendar cal = Calendar.getInstance();
         //Uploads the file to S3 and creates a path to be more easy to process.
         s3.uploadFile(properties.getProperty("s3Bucket"),

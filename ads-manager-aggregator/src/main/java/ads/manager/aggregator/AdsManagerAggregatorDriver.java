@@ -30,7 +30,7 @@ public class AdsManagerAggregatorDriver {
                 in.close();
             }
 
-            S3 s3 = new S3();
+            S3 s3 = new S3(properties.getProperty("aws.regionName"));
 
             String pigScriptPath = new File(new File(propertiesFile).getParentFile() + "/banner_apps_aggregations.pig").getAbsolutePath();
 

@@ -28,6 +28,17 @@ public class S3 {
     }
 
     /**
+     * Constructor
+     */
+    public S3(String regionName) {
+        // TODO: Region is hardcoded, must come from properties file.
+        this.s3 = new AmazonS3Client(AWS.getCredentials());
+        this.reg = Region.getRegion(Regions.fromName(regionName));
+        s3.setRegion(this.reg);
+    }
+
+
+    /**
      * Uploads the file to S3
      * @param bucketName    of the bucket at ads.manager.common.S3
      * @param key           Key (path to the object including its name) of the object at ads.manager.common.S3

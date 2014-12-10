@@ -6,6 +6,7 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduceClient;
 import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.services.elasticmapreduce.util.StepFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.*;
@@ -25,6 +26,8 @@ public class EMR {
         emr.setRegion(Regions.fromName(regionName));
         emr.setEndpoint(properties.getProperty("aws.endpoint"));
 
+        StepFactory factory = new StepFactory("");
+
         String runnerJar = "s3://" + regionName + ".elasticmapreduce/libs/script-runner/script-runner.jar";
         String actionOnFailure = "TERMINATE_JOB_FLOW";
 
@@ -35,7 +38,8 @@ public class EMR {
         StepConfig enableDebugging = new StepConfig()
                 .withName("Enable debugging")
                 .withActionOnFailure(actionOnFailure)
-                .withHadoopJarStep(hadoopConfig);
+                .withHadoopJarStep(hadoopConfig)
+                ;
 
         List<String> args = new ArrayList<>();
         args.add("s3://" + regionName + ".elasticmapreduce/libs/pig/pig-script");
