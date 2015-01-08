@@ -1,6 +1,6 @@
-# ADS Manager
+# ADS Simulator
 
-The **ADS Manager** simulates the process of a real time ads platform and some ways to process the data.
+The **ADS Simulator** simulates the process of a real time ads platform and some ways to process the data.
 
 ## Setup Steps
  1. Create the EC2 machine(s).
